@@ -1,0 +1,31 @@
+cabal-version:      2.4
+name:               exercism-hs
+version:            0.1.0.0
+
+author:             Mauro Berlanda
+maintainer:         mauro.berlanda@gmail.com
+
+extra-source-files:
+  CHANGELOG.md
+  README.md
+
+library
+  hs-source-dirs: src
+  ghc-options: -Wall
+  build-depends:
+    base ^>=4.16.4.0
+  exposed-modules:
+    Exercism
+  default-language: Haskell2010
+
+test-suite spec
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test
+  ghc-options: -Wall
+  main-is: Spec.hs
+  build-depends:
+      base ^>=4.16.4.0
+    , hspec ==2.*
+    , exercism-hs
+  default-language: Haskell2010
+  build-tool-depends: hspec-discover:hspec-discover == 2.*
