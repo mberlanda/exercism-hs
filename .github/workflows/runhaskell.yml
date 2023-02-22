@@ -10,4 +10,4 @@ jobs:
         with:
           ghc-version: '9.2'
           cabal-version: '3.6'
-      - run: cabal build && cabal test
+      - run: cabal build && cabal test --test-show-details=direct
