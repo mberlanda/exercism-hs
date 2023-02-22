@@ -15,17 +15,21 @@ library
   build-depends:
     base ^>=4.16.4.0
   exposed-modules:
-    Exercism.Hamming
+      Exercism.Hamming
+    , Exercism.RobotSimulator
   default-language: Haskell2010
 
 test-suite spec
   type: exitcode-stdio-1.0
   hs-source-dirs: test
-  ghc-options: -Wall
+  ghc-options: -Wall -fno-warn-type-defaults
   main-is: Spec.hs
   build-depends:
       base ^>=4.16.4.0
     , hspec ==2.*
     , exercism-hs
+  other-modules:
+      Exercism.HammingSpec
+    , Exercism.RobotSimulatorSpec
   default-language: Haskell2010
   build-tool-depends: hspec-discover:hspec-discover == 2.*
